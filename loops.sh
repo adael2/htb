@@ -32,10 +32,19 @@ hash="VTJGc2RHVmtYMTl2ZnYyNTdUeERVRnBtQWVGNmFWWVUySG1wTXNmRi9rQT0K"
 # <- For-Loop here
 for i in {1..28}
 do
-        var=$(echo $var | base64)
+    # Base64 Encoding:
+    var=$(echo "$var" | base64)
 done
 
-salt=${#var}
+###################### Calculate the length of the final base64-encoded string #####################
+#                                                                                                  #
+# salt=${#var} does not work because it gives the length of the string,                            #
+# not the number of characters in the string.                                                      #
+# Please see the forum post:                                                                       #
+# https://forum.hackthebox.com/t/introduction-to-bash-scripting-hack-the-box-academy/243473?page=2 #
+#                                                                                                  #
+####################################################################################################
+salt=$(echo $var | wc -c)
 
 # Check if $salt is empty
 if [[ ! -z "$salt" ]]
